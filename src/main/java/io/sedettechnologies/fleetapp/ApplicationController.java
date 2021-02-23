@@ -10,4 +10,9 @@ public class ApplicationController {
 	public String goHome() {
 		return "index";
 	}
+	
+//	@GetMapping("/countries")
+//	public String getCountry() {
+//		return "country";
+//	}
 }
