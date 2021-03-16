@@ -44,7 +44,7 @@
       </div>
 
       <!--logo start-->
-      <a href="index.html" class="logo">Nice <span class="lite">Admin</span></a>
+      <a href="index.html" class="logo">Fleet <span class="lite">MS</span></a>
       <!--logo end-->
 
       <div class="nav search-row" id="top_menu">
@@ -434,6 +434,7 @@
 					<td th:text="${state.id}">Id</td>
 					<td th:text="${state.name}">Name</td>
 					<td th:text="${state.details}">Details</td>				
+								
                     <td>
                       <div class="btn-group">
                         <a class="btn btn-primary" th:href="@{/states/findById/(id=${state.id})}"><i class="icon_pencil-edit"></i></a>
@@ -459,7 +460,7 @@
             Licensing information: https://bootstrapmade.com/license/
             Purchase the pro version form: https://bootstrapmade.com/buy/?theme=NiceAdmin
           -->
-          Designed by <a href="#">BootstrapMade</a>
+          Designed by <a href="#">Sedet Technologies</a>
         </div>
     </div>
   </section>
@@ -600,7 +601,7 @@
 
           <div class="form-group">
 		    <label for="ddlCountryDetails" class="col-form-label">Country: </label>
-			    <select class="form-control" id="ddlCountryDetails" name="countryid">
+			    <select class="form-control" id="ddlCountryDetails" name="countryid" disabled>
 			       <option>-SELECT-</option>			    
 			       <option th:each="country : ${countries}"
 				        th:value="${country.id}"
@@ -616,12 +617,12 @@
                     
          <div class="form-group">
             <label for="codeDetails" class="col-form-label">Code:</label>
-            <input type="text" class="form-control" id="codeDetails" name="code" required>
+            <input type="text" class="form-control" id="codeDetails" name="code" readonly>
           </div>
           
           <div class="form-group">
             <label for="capitalDetails" class="col-form-label">Capital:</label>
-            <input type="text" class="form-control" id="capitalDetails" name="capital" required>
+            <input type="text" class="form-control" id="capitalDetails" name="capital" readonly>
           </div> 
                     
           <div class="form-group">

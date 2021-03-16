@@ -49,7 +49,7 @@
 			</div>
 
 			<!--logo start-->
-			<a href="index.html" class="logo">Nice <span class="lite">Admin</span></a>
+      <a href="index.html" class="logo">Fleet <span class="lite">MS</span></a>
 			<!--logo end-->
 
 			<div class="nav search-row" id="top_menu">
@@ -344,7 +344,7 @@
 				<div class="row">
 					<div class="col-lg-12">
 						<section class="panel">
-							<header class="panel-heading"> Employee Type Details </header>
+							<header class="panel-heading"> Locations Details </header>
 							<button type="button" class="btn btn-primary" data-toggle="modal"
 								data-target="#addModal">Add New</button>
 
@@ -391,7 +391,7 @@
             Licensing information: https://bootstrapmade.com/license/
             Purchase the pro version form: https://bootstrapmade.com/buy/?theme=NiceAdmin
           -->
-				Designed by <a href="#">BootstrapMade</a>
+				Designed by <a href="#">Sedet Technologies</a>
 			</div>
 		</div>
 	</section>
@@ -566,25 +566,25 @@
 						<div class="form-group">
 							<label for="descriptionDetails" class="col-form-label">Description:</label>
 							<input type="text" class="form-control" id="descriptionDetails"
-								name="description" required>
+								name="description" required readonly>
 						</div>
 
 						<div class="form-group">
 							<label for="cityDetails" class="col-form-label">City:</label> <input
 								type="text" class="form-control" id="cityDetails" name="city"
-								required>
+								required readonly>
 						</div>
 
 						<div class="form-group">
 							<label for="detailsDetails" class="col-form-label">Address:</label>
 							<textarea type="text" class="form-control" id="addressDetails"
-								name="address"></textarea>
+								name="address" required readonly></textarea>
 						</div>
 
 						<div class="form-group">
 							<label for="ddlCountryDetails" class="col-form-label">Country:
 							</label> <select class="form-control" id="ddlCountryDetails"
-								name="countryid">
+								name="countryid" disabled>
 								<option>-SELECT-</option>
 								<option th:each="country : ${countries}"
 									th:value="${country.id}" th:text="${country.description}">
@@ -594,7 +594,7 @@
 
 						<div class="form-group">
 							<label for="ddlStateDetails" class="col-form-label">State:
-							</label> <select class="form-control" id="ddlStateDetails" name="stateid">
+							</label> <select class="form-control" id="ddlStateDetails" name="stateid" disabled>
 								<option>-SELECT-</option>
 								<option th:each="state : ${states}" th:value="${state.id}"
 									th:text="${state.name}"></option>
@@ -604,7 +604,7 @@
 						<div class="form-group">
 							<label for="detailsAdd" class="col-form-label">Details:</label> <input
 								type="text" class="form-control" id="detailsDetails"
-								name="details">
+								name="details" readonly> 
 						</div>
 						<div class="form-group">
 							<label class="col-form-label">Last Updated By:</label> <input
