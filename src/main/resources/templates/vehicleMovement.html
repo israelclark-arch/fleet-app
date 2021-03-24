@@ -486,8 +486,8 @@
  
           <div class="form-group">
 		    <label for="ddlVehicleAdd" class="col-form-label">Vehicle: </label>
-			    <select class="form-control" id="ddlVehicleAdd" name="vehicleid">
-			       <option>-SELECT-</option>			    
+			    <select class="form-control" id="ddlVehicleAdd" name="vehicleid" required>
+			       <option></option>			    
 			       <option th:each="vehicle : ${vehicles}"
 				        th:value="${vehicle.id}"
 				        th:text="${vehicle.name}">
@@ -497,8 +497,8 @@
           
          <div class="form-group">
 		    <label for="ddlLocation1Add" class="col-form-label">Departed from: </label>
-			    <select class="form-control" id="ddlLocation1Add" name="locationid1">
-			       <option>-SELECT-</option>			    
+			    <select class="form-control" id="ddlLocation1Add" name="locationid1" required>
+			       <option></option>			    
 			       <option th:each="location : ${locations}"
 				        th:value="${location.id}"
 				        th:text="${location.description}">
@@ -508,13 +508,13 @@
 
           <div class="form-group">
             <label for="date1Add" class="col-form-label">Departure Date:</label>
-            <input type="date" class="form-control" id="date1Add" name="date1">
+            <input type="date" class="form-control" id="date1Add" name="date1"  required>
           </div>  
 
          <div class="form-group">
 		    <label for="ddlLocation2Add" class="col-form-label">Arrived at: </label>
-			    <select class="form-control" id="ddlLocation2Add" name="locationid2">
-			       <option>-SELECT-</option>			    
+			    <select class="form-control" id="ddlLocation2Add" name="locationid2" required>
+			       <option></option>			    
 			       <option th:each="location : ${locations}"
 				        th:value="${location.id}"
 				        th:text="${location.description}">
@@ -524,7 +524,7 @@
 
           <div class="form-group">
             <label for="date2Add" class="col-form-label">Arrival date:</label>
-            <input type="date" class="form-control" id="date2Add" name="date2">
+            <input type="date" class="form-control" id="date2Add" name="date2" required>
           </div>          
           
           <div class="form-group">
@@ -561,7 +561,7 @@
 
           <div class="form-group">
 		    <label for="ddlVehicleEdit" class="col-form-label">Vehicle: </label>
-			    <select class="form-control" id="ddlVehicleEdit" name="vehicleid">
+			    <select class="form-control" id="ddlVehicleEdit" name="vehicleid" required >
 			       <option>-SELECT-</option>			    
 			       <option th:each="vehicle : ${vehicles}"
 				        th:value="${vehicle.id}"
@@ -572,7 +572,7 @@
           
          <div class="form-group">
 		    <label for="ddlLocation1Edit" class="col-form-label">Departed from: </label>
-			    <select class="form-control" id="ddlLocation1Edit" name="locationid1">
+			    <select class="form-control" id="ddlLocation1Edit" name="locationid1" required>
 			       <option>-SELECT-</option>			    
 			       <option th:each="location : ${locations}"
 				        th:value="${location.id}"
@@ -583,12 +583,12 @@
 
           <div class="form-group">
             <label for="date1Edit" class="col-form-label">Departure Date:</label>
-            <input type="date" class="form-control" id="date1Edit" name="date1">
+            <input type="date" class="form-control" id="date1Edit" name="date1" required>
           </div>  
 
          <div class="form-group">
 		    <label for="ddlLocation2Edit" class="col-form-label">Arrived at: </label>
-			    <select class="form-control" id="ddlLocation2Edit" name="locationid2">
+			    <select class="form-control" id="ddlLocation2Edit" name="locationid2" required>
 			       <option>-SELECT-</option>			    
 			       <option th:each="location : ${locations}"
 				        th:value="${location.id}"
@@ -599,7 +599,7 @@
 
           <div class="form-group">
             <label for="date2Edit" class="col-form-label">Arrival date:</label>
-            <input type="date" class="form-control" id="date2Edit" name="date2">
+            <input type="date" class="form-control" id="date2Edit" name="date2" required>
           </div>          
           
           <div class="form-group">
@@ -636,7 +636,7 @@
 
           <div class="form-group">
 		    <label for="ddlVehicleDetails" class="col-form-label">Vehicle: </label>
-			    <select class="form-control" id="ddlVehicleDetails" name="vehicleid">
+			    <select class="form-control" id="ddlVehicleDetails" name="vehicleid" disabled>
 			       <option>-SELECT-</option>			    
 			       <option th:each="vehicle : ${vehicles}"
 				        th:value="${vehicle.id}"
@@ -647,7 +647,7 @@
           
          <div class="form-group">
 		    <label for="ddlLocation1Details" class="col-form-label">Departed from: </label>
-			    <select class="form-control" id="ddlLocation1Details" name="locationid1">
+			    <select class="form-control" id="ddlLocation1Details" name="locationid1" disabled>
 			       <option>-SELECT-</option>			    
 			       <option th:each="location : ${locations}"
 				        th:value="${location.id}"
@@ -658,12 +658,12 @@
 
           <div class="form-group">
             <label for="date1Details" class="col-form-label">Departure Date:</label>
-            <input type="text" class="form-control" id="date1Details" name="date1">
+            <input type="text" class="form-control" id="date1Details" name="date1" reaadonly>
           </div>  
 
          <div class="form-group">
 		    <label for="ddlLocation2Details" class="col-form-label">Arrived at: </label>
-			    <select class="form-control" id="ddlLocation2Details" name="locationid2">
+			    <select class="form-control" id="ddlLocation2Details" name="locationid2" disabled>
 			       <option>-SELECT-</option>			    
 			       <option th:each="location : ${locations}"
 				        th:value="${location.id}"
@@ -674,7 +674,7 @@
 
           <div class="form-group">
             <label for="date2Details" class="col-form-label">Arrival date:</label>
-            <input type="text" class="form-control" id="date2Details" name="date2">
+            <input type="text" class="form-control" id="date2Details" name="date2" readonly>
           </div>          
           
           <div class="form-group">

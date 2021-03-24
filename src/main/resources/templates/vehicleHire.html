@@ -431,8 +431,8 @@
 										</label>
 										<div class="col-sm-6">
 											<select id="ddlVehicleAdd" name="vehicleid"
-												class="form-control">
-												<option>-SELECT-</option>
+												class="form-control" required>
+												<option></option>
 												<option th:each="vehicle : ${vehicles}"
 													th:value="${vehicle.id}" th:text="${vehicle.description}">
 												</option>
@@ -445,8 +445,8 @@
 										</label>
 										<div class="col-sm-6">
 											<select id="ddlClientAdd" name="clientid"
-												class="form-control">
-												<option>-SELECT-</option>
+												class="form-control" required>
+												<option></option>
 												<option th:each="client : ${clients}"
 													th:value="${client.id}" th:text="${client.name}">
 												</option>
@@ -459,7 +459,7 @@
 											Out: </label>
 										<div class="col-sm-6">
 											<input type="date" class="form-control" id="dateOutAdd"
-												name="dateOut" placeholder="Date Out">
+												name="dateOut" placeholder="Date Out" required>
 										</div>
 									</div>
 									<div class="form-group row">
@@ -467,7 +467,7 @@
 											Out:</label>
 										<div class="col-sm-6">
 											<input type="text" class="form-control" id="timeOutAdd"
-												name="timeOut" placeholder="Time Out">
+												name="timeOut" placeholder="Time Out" required>
 										</div>
 									</div>
 								</td>
@@ -478,8 +478,8 @@
 										</label>
 										<div class="col-sm-6">
 											<select id="ddlLocationAdd" name="locationid"
-												class="form-control">
-												<option>-SELECT-</option>
+												class="form-control" required>
+												<option></option>
 												<option th:each="location : ${locations}"
 													th:value="${location.id}" th:text="${location.description}">
 												</option>
@@ -492,7 +492,7 @@
 											In: </label>
 										<div class="col-sm-6">
 											<input type="date" class="form-control" id="dateInAdd"
-												name="dateIn" placeholder="Date In">
+												name="dateIn" placeholder="Date In" required>
 										</div>
 									</div>
 									<div class="form-group row">
@@ -500,7 +500,7 @@
 											In: </label>
 										<div class="col-sm-6">
 											<input type="text" class="form-control" id="timeInAdd"
-												name="timeIn" placeholder="Time In">
+												name="timeIn" placeholder="Time In" required>
 										</div>
 									</div>
 									<div class="form-group row">
@@ -508,7 +508,7 @@
 										</label>
 										<div class="col-sm-6">
 											<input type="text" class="form-control" id="priceAdd"
-												name="price" placeholder="Price">
+												name="price" placeholder="Price" required>
 										</div>
 									</div>
 
@@ -672,6 +672,141 @@
 		</form>
 	</div>
 
+
+<div class="modal fade" id="detailsModal" tabindex="-1" role="dialog"
+		aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<form>
+			<div class="modal-dialog modal-lg" role="document" style="width: 70%">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">Vehicle
+							Hire Details</h5>
+						<button type="button" class="close" data-dismiss="modal"
+							aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+
+					<div class="modal-body">
+						<table width="100%">
+							<tr>
+								<td width="50%">
+									<div class="form-group row">
+										<label for="idDetails" class="col-sm-4 col-form-label">Id:
+										</label>
+										<div class="col-sm-6">
+											<input type="text" class="form-control" id="idDetails" name="id"
+												placeholder="Id" readonly>
+										</div>
+									</div>
+
+									<div class="form-group row">
+										<label for="ddlVehicleDetails" class="col-sm-4 col-form-label">Vehicle:
+										</label>
+										<div class="col-sm-6">
+											<select id="ddlVehicleDetails" name="vehicleid"
+												class="form-control">
+												<option>-SELECT-</option>
+												<option th:each="vehicle : ${vehicles}"
+													th:value="${vehicle.id}" th:text="${vehicle.name}">
+												</option>
+											</select>
+										</div>
+									</div>
+
+									<div class="form-group row">
+										<label for="ddlClientDetails" class="col-sm-4 col-form-label">Client:
+										</label>
+										<div class="col-sm-6">
+											<select id="ddlClientDetails" name="clientid"
+												class="form-control">
+												<option>-SELECT-</option>
+												<option th:each="client : ${clients}"
+													th:value="${client.id}" th:text="${client.name}">
+												</option>
+											</select>
+										</div>
+									</div>
+
+									<div class="form-group row">
+										<label for="dateOutDetails" class="col-sm-4 col-form-label">Date
+											Out: </label>
+										<div class="col-sm-6">
+											<input type="date" class="form-control" id="dateOutDetails"
+												name="dateOut" placeholder="Date Out">
+										</div>
+									</div>
+									<div class="form-group row">
+										<label for="timeOutDetails" class="col-sm-4 col-form-label">Time
+											Out:</label>
+										<div class="col-sm-6">
+											<input type="text" class="form-control" id="timeOutDetails"
+												name="timeOut" placeholder="Time Out" rows="2">
+										</div>
+									</div>
+								</td>
+								<td width="50%" style="padding-left: 10px">
+
+									<div class="form-group row">
+										<label for="ddlLocationDetails" class="col-sm-4 col-form-label">Destination:
+										</label>
+										<div class="col-sm-6">
+											<select id="ddlLocationDetails" name="locationid"
+												class="form-control">
+												<option>-SELECT-</option>
+												<option th:each="location : ${locations}"
+													th:value="${location.id}" th:text="${location.description}">
+												</option>
+											</select>
+										</div>
+									</div>
+
+									<div class="form-group row">
+										<label for="dateInDetails" class="col-sm-4 col-form-label">Date
+											In: </label>
+										<div class="col-sm-6">
+											<input type="date" class="form-control" id="dateInDetails"
+												name="dateIn" placeholder="Date In">
+										</div>
+									</div>
+									<div class="form-group row">
+										<label for="timeInDetails" class="col-sm-4 col-form-label">Time
+											In: </label>
+										<div class="col-sm-6">
+											<input type="text" class="form-control" id="timeInDetails"
+												name="timeIn" placeholder="Time In">
+										</div>
+									</div>
+									<div class="form-group row">
+										<label for="priceDetails" class="col-sm-4 col-form-label">Price:
+										</label>
+										<div class="col-sm-6">
+											<input type="text" class="form-control" id="priceDetails"
+												name="price" placeholder="Price">
+										</div>
+									</div>
+
+									<div class="form-group row">
+										<label for="remarksDetails" class="col-sm-4 col-form-label">Remarks</label>
+										<div class="col-sm-6">
+											<textarea class="form-control" id="remarksDetails"
+												name="remarks" placeholder="Remarks" rows="3"></textarea>
+										</div>
+									</div>
+								</td>
+							</tr>
+						</table>
+						<button type="submit" class="btn btn-primary">Sign in</button>
+					</div>
+
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary"
+							data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
 
 	<div class="modal" tabindex="-1" role="dialog" id="deleteModal">
 		<div class="modal-dialog" role="document">

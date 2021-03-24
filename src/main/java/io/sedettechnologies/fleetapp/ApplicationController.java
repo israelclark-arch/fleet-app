@@ -11,8 +11,13 @@ public class ApplicationController {
 		return "index";
 	}
 	
-//	@GetMapping("/countries")
-//	public String getCountry() {
-//		return "country";
-//	}
+	@GetMapping("/login")
+	public String login() {
+		return "login";
+	}
+	
+	@GetMapping("/logout")
+	public String logout() {
+		return "login";
+	}
 }

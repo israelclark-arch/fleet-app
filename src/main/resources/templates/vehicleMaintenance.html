@@ -423,8 +423,8 @@
 
 						<div class="form-group">
 							<label for="ddlVehicleAdd" class="col-form-label">Vehicle:
-							</label> <select class="form-control" id="ddlVehicleAdd" name="vehicleid">
-								<option>-SELECT-</option>
+							</label> <select class="form-control" id="ddlVehicleAdd" name="vehicleid" required>
+								<option></option>
 								<option th:each="vehicle : ${vehicles}" th:value="${vehicle.id}"
 									th:text="${vehicle.description}"></option>
 							</select>
@@ -433,7 +433,7 @@
 						<div class="form-group">
 							<label for="startDateAdd" class="col-form-label">Start
 								Date:</label> <input type="date" class="form-control" id="startDateAdd"
-								name="startDate">
+								name="startDate"  required>
 						</div>
 
 						<div class="form-group">
@@ -445,15 +445,15 @@
 						<div class="form-group">
 							<label for="endDateAdd" class="col-form-label">End Date:</label>
 							<input type="date" class="form-control" id="endDateAdd"
-								name="endDate"></input>
+								name="endDate" required></input>
 						</div>
 
 
 						<div class="form-group">
 							<label for="ddlSupplierAdd" class="col-form-label">Supplier:
 							</label> <select class="form-control" id="ddlSupplierAdd"
-								name="supplierid">
-								<option>-SELECT-</option>
+								name="supplierid" required>
+								<option></option>
 								<option th:each="supplier : ${suppliers}"
 									th:value="${supplier.id}" th:text="${supplier.name}">
 								</option>
@@ -461,8 +461,8 @@
 						</div>
 
 						<div class="form-group">
-							<label for="priceAdd" class="col-form-label">Price:</label> <input
-								type="text" class="form-control" id="priceAdd" name="price">
+							<label for="priceAdd" class="col-form-label">Price:</label> 
+							<input type ="text" class="form-control" id="priceAdd" name="price"  required></input>
 						</div>
 					</div>
 
@@ -482,7 +482,7 @@
 			<div class="modal-dialog" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
-						<h5 class="modal-title" id="editModalLabel">Edit Location
+						<h5 class="modal-title" id="editModalLabel">Edit Vehicle Maintenance
 							Record</h5>
 						<button type="button" class="close" data-dismiss="modal"
 							aria-label="Close">

@@ -438,8 +438,8 @@
 
 						<div class="form-group">
 							<label for="ddlCountryAdd" class="col-form-label">Country:
-							</label> <select class="form-control" id="ddlCountryAdd" name="countryid">
-								<option>-SELECT-</option>
+							</label> <select class="form-control" id="ddlCountryAdd" name="countryid" required>
+								<option></option>
 								<option th:each="country : ${countries}"
 									th:value="${country.id}" th:text="${country.description}">
 								</option>
@@ -448,8 +448,8 @@
 
 						<div class="form-group">
 							<label for="ddlStateAdd" class="col-form-label">State: </label> <select
-								class="form-control" id="ddlStateAdd" name="stateid">
-								<option>-SELECT-</option>
+								class="form-control" id="ddlStateAdd" name="stateid" required>
+								<option></option>
 								<option th:each="state : ${states}" th:value="${state.id}"
 									th:text="${state.name}"></option>
 							</select>
@@ -513,7 +513,7 @@
 							<label for="ddlCountryEdit" class="col-form-label">Country:
 							</label> <select class="form-control" id="ddlCountryEdit"
 								name="countryid">
-								<option>-SELECT-</option>
+								<option></option>
 								<option th:each="country : ${countries}"
 									th:value="${country.id}" th:text="${country.description}">
 								</option>
@@ -523,7 +523,7 @@
 						<div class="form-group">
 							<label for="ddlStateEdit" class="col-form-label">State: </label>
 							<select class="form-control" id="ddlStateEdit" name="stateid">
-								<option>-SELECT-</option>
+								<option></option>
 								<option th:each="state : ${states}" th:value="${state.id}"
 									th:text="${state.name}"></option>
 							</select>

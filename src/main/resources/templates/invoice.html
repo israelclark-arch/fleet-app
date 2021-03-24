@@ -409,13 +409,16 @@
                     <th><i class="icon_table"></i>Date</th>
                     <th><i class="icon_table"></i> Client</th>
                     <th><i class="icon_table"></i>Remarks</th>
+                    <th><i class="icon_table"></i>Status</th>
                     <th><i class="icon_cogs"></i> Action</th>
                   </tr>
 				 <tr th:each="invoice:${invoices}">
 					<td th:text="${invoice.id}">Id</td>
 					<td th:text="${invoice.invoiceDate}">Invoice Date</td>
 					<td th:text="${invoice.client.name}">Client</td>	
-					<td th:text="${invoice.remarks}">Remarks</td>																	
+					<td th:text="${invoice.remarks}">Remarks</td>
+					<td th:text="${invoice.invoiceStatus.description}">Status</td>																	
+																						
                     <td>
                       <div class="btn-group">
                         <a class="btn btn-primary" id="editButton" th:href="@{/invoices/findById/(id=${invoice.id})}"><i class="icon_pencil-edit"></i></a>
@@ -571,7 +574,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="editModalLabel">Locations Details</h5>
+        <h5 class="modal-title" id="editModalLabel">Invoice Details</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -585,7 +588,7 @@
   
             <div class="form-group">
 		    <label for="ddlClientDetails" class="col-form-label">Client: </label>
-			    <select class="form-control" id="ddlClientDetails" name="clientid">
+			    <select class="form-control" id="ddlClientDetails" name="clientid" disabled>
 			       <option>-SELECT-</option>			    
 			       <option th:each="client : ${clients}"
 				        th:value="${client.id}"
@@ -596,12 +599,12 @@
 
           <div class="form-group">
             <label for="invoiceDateDetails" class="col-form-label">Invoice Date:</label>
-            <input type="date" class="form-control" id="invoiceDateDetails" name="invoiceDate">
+            <input type="date" class="form-control" id="invoiceDateDetails" name="invoiceDate" readonly>
           </div>          
           
          <div class="form-group">
 		    <label for="ddlInvoiceStatusDetails" class="col-form-label">Invoice Status: </label>
-			    <select class="form-control" id="ddlInvoiceStatusDetails" name="invoicestatusid">
+			    <select class="form-control" id="ddlInvoiceStatusDetails" name="invoicestatusid" disabled>
 			       <option>-SELECT-</option>			    
 			       <option th:each="invoiceStatus : ${invoiceStatuses}"
 				        th:value="${invoiceStatus.id}"
@@ -612,7 +615,7 @@
 
          <div class="form-group">
             <label for="remarksDetails" class="col-form-label">Remarks:</label>
-            <input type="text" class="form-control" id="remarksDetails" name="remarks">
+            <input type="text" class="form-control" id="remarksDetails" name="remarks" readonly>
           </div>
 
       </div>
